@@ -1,0 +1,11 @@
+type Query {
+  flaggedTransactions(limit: Int = 100): [FlaggedTransaction!]!
+}
+type FlaggedTransaction {
+  transactionId: ID!
+  transactionHash: String!
+  occurredAt: String!
+  amountInCents: Long!
+  flagReason: String
+}
+scalar Long

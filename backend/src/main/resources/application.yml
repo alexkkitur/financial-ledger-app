@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: ${JDBC_URL:jdbc:postgresql://localhost:5432/ledger}
+    username: ${JDBC_USERNAME:ledger}
+    password: ${JDBC_PASSWORD:change-me}
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: validate
+    properties.hibernate.jdbc.time_zone: UTC
+  graphql:
+    path: /graphql
+security:
+  jwt:
+    secret: ${JWT_SECRET:replace-with-a-32-byte-secret-in-production}
+    ttl-seconds: ${JWT_TTL_SECONDS:900}
